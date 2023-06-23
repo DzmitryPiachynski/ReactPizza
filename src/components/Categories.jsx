@@ -1,6 +1,9 @@
-import React from "react";
+import React, {useState} from "react";
 
-export function Categories({items, active, setActive}) {
+export function Categories({items}) {
+
+    const [active, setActive] = useState('Все');
+
     return (
         <div className="categories">
             <ul>
