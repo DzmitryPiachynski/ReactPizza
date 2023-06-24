@@ -12,7 +12,7 @@ export function SortPopup({items}) {
     }
 
     const handleOutsideClick = (e) => {
-        if (!sortRef.current.contains(e.target)) {
+        if (sortRef.current && !sortRef.current.contains(e.target)) {
             setVisiblePopup(false)
         }
     }
