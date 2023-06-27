@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from "react";
+import axios from "axios";
 
 import {Header} from "./components";
 import {Home, Cart} from "./pages";
@@ -9,9 +10,8 @@ function App() {
     const [pizza, setPizza] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:3000/db.json')
-            .then(res => res.json())
-            .then(json => setPizza(json.pizzas))
+        axios.get('http://localhost:3000/db.json')
+            .then(({data}) => setPizza(data.pizzas))
     }, [])
 
     return (
